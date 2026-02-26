@@ -208,8 +208,8 @@ function renderSidebar() {
         winnerOverlay.classList.remove("hidden");
         winnerOverlay.innerHTML =
             state.room.winner === "host"
-                ? "<strong>Host victory.</strong> The Bloody JS icon ate the entire class."
-                : "<strong>Students survived.</strong> At least one student escaped until the timer ended.";
+                ? "<strong>Жалмауыз Функция женді.</strong> АХ ХА ХА ХА."
+                : "<strong>Букашкалар Женді.</strong> Чисто лаки болып қалды.";
     } else {
         winnerOverlay.classList.add("hidden");
     }
