@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bloody JS Hunt</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Multiplayer classroom game</p>
+          <h1>Bloody JS Hunt</h1>
+          <p class="subtitle">Host the room, hunt students, and force them to solve questions to survive.</p>
+        </div>
+        <button id="audioToggle" class="ghost-button">Enable sound</button>
+      </header>
+
+      <main class="content-grid">
+        <section id="lobbyCard" class="panel panel-large">
+          <h2>Join or create a room</h2>
+          <p class="panel-copy">One host creates the room. Students join using the room code from their own laptops.</p>
+
+          <div class="forms-grid">
+            <form id="createForm" class="form-card">
+              <h3>Create room</h3>
+              <label>
+                Your name
+                <input id="createName" maxlength="20" placeholder="Teacher / Host" value="Host" />
+              </label>
+              <button type="submit" class="primary-button">Create room</button>
+            </form>
+
+            <form id="joinForm" class="form-card">
+              <h3>Join room</h3>
+              <label>
+                Your name
+                <input id="joinName" maxlength="20" placeholder="Student name" />
+              </label>
+              <label>
+                Room code
+                <input id="joinCode" maxlength="5" placeholder="ABCDE" />
+              </label>
+              <button type="submit" class="primary-button">Join room</button>
+            </form>
+          </div>
+
+          <div class="instructions-box">
+            <h3>How the game works</h3>
+            <ul>
+              <li>Move with the arrow keys. WASD works too.</li>
+              <li>The host controls the Bloody JS icon and hunts the students.</li>
+              <li>If the host catches a student, that student gets a random multiple-choice question.</li>
+              <li>Correct answer: the host becomes weaker for 5 seconds.</li>
+              <li>Wrong answer: the student is eaten and becomes a spectator.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="gameCard" class="panel hidden">
+          <div class="room-header">
+            <div>
+              <p class="eyebrow">Room code</p>
+              <div id="roomCodeBadge" class="room-code">-----</div>
+            </div>
+            <div class="room-header-actions">
+              <button id="copyCodeButton" class="ghost-button">Copy code</button>
+              <button id="startButton" class="primary-button hidden">Start hunt</button>
+              <button id="restartButton" class="ghost-button hidden">Restart</button>
+            </div>
+          </div>
+
+          <div class="game-layout">
+            <div class="canvas-wrap">
+              <canvas id="gameCanvas" width="1280" height="720"></canvas>
+              <div id="winnerOverlay" class="winner-overlay hidden"></div>
+              <div id="spectatorBadge" class="spectator-badge hidden">You are a spectator.</div>
+            </div>
+
+            <aside class="sidebar">
+              <div class="sidebar-card status-card">
+                <h3>Status</h3>
+                <div class="status-row"><span>Your role</span><strong id="roleValue">-</strong></div>
+                <div class="status-row"><span>Round time</span><strong id="timerValue">-</strong></div>
+                <div class="status-row"><span>Host debuff</span><strong id="debuffValue">-</strong></div>
+                <div class="status-row"><span>Quiz target</span><strong id="quizTargetValue">None</strong></div>
+              </div>
+
+              <div class="sidebar-card">
+                <h3>Players</h3>
+                <div id="playerList" class="player-list"></div>
+              </div>
+
+              <div class="sidebar-card">
+                <h3>Room feed</h3>
+                <div id="feedList" class="feed-list"></div>
+              </div>
+            </aside>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div id="quizModal" class="modal hidden">
+      <div class="modal-card">
+        <p class="eyebrow">Caught by the Bloody JS icon</p>
+        <h2 id="quizPrompt">Question</h2>
+        <p id="quizTimer" class="quiz-timer">10.0s</p>
+        <div id="quizOptions" class="quiz-options"></div>
+      </div>
+    </div>
+
+    <div id="toast" class="toast hidden"></div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>
