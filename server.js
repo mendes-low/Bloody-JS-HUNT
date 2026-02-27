@@ -19,78 +19,67 @@ const STUDENT_SPEED = 180;
 
 const QUESTIONS = [
     {
-        prompt: "Which keyword declares a constant in JavaScript?",
-        options: ["let", "const", "var", "static"],
-        answerIndex: 1,
-    },
-    {
-        prompt: "What does CSS stand for?",
-        options: [
-            "Computer Style Sheets",
-            "Creative Style System",
-            "Cascading Style Sheets",
-            "Colorful Style Sheets",
-        ],
+        prompt: "Қазақстанның тәуелсіздігін бірінші мойындаған мемлекет?",
+        options: ["Қытай", "Түркия", "АҚШ", "Қырғыстан"],
         answerIndex: 2,
     },
     {
-        prompt: "Which array method adds an item to the end?",
-        options: ["push()", "shift()", "splice()", "pop()"],
+        prompt: "Ақ аюлар неге пингвиндарды жемейді",
+        options: [
+            "Екеуі екі түрлі жерде тұрады",
+            "Пингвиндар көп болып жүреді",
+            "Пингвиндер жеп қояды",
+        ],
         answerIndex: 0,
     },
     {
-        prompt: "Which company created React?",
-        options: ["Apple", "Meta", "Netflix", "Google"],
-        answerIndex: 1,
-    },
-    {
-        prompt: "Which symbol checks strict equality in JavaScript?",
-        options: ["==", "=", "===", "!=="],
-        answerIndex: 2,
-    },
-    {
-        prompt: "Which protocol is usually used for secure websites?",
-        options: ["FTP", "HTTP", "SMTP", "HTTPS"],
+        prompt: "Тепе-теңдікке жауап беретін дене мүшесі ?",
+        options: ["Көз", "Аяқ", "Ми", "Құлақ"],
         answerIndex: 3,
     },
     {
-        prompt: "Which data structure stores key-value pairs in JSON?",
-        options: ["Array only", "Object", "Function", "Class"],
+        prompt: "Киттің баласын қалай атайды?",
+        options: ["Киттің баласы", "Бұзау", "Лақ"],
         answerIndex: 1,
     },
     {
-        prompt: "Which HTML tag is used for the largest heading?",
-        options: ["<head>", "<h1>", "<heading>", "<title>"],
+        prompt: "Қасқырдың баласын қалай атайды?",
+        options: ["Күшік", "Бөлтірік", "Арлан","Соқыр"],
         answerIndex: 1,
     },
     {
-        prompt: "Which React hook is used for state?",
-        options: ["useRef", "useMemo", "useState", "useEffect"],
+        prompt: "",
+        options: [],
+        answerIndex: 3,
+    },
+    {
+        prompt: "",
+        options: [],
+        answerIndex: 1,
+    },
+    {
+        prompt: "",
+        options: [],
+        answerIndex: 1,
+    },
+    {
+        prompt: "",
+        options: [],
         answerIndex: 2,
     },
     {
-        prompt: "What is the default PostgreSQL port?",
-        options: ["3306", "5432", "8080", "27017"],
+        prompt: "",
+        options: [],
         answerIndex: 1,
     },
     {
-        prompt: "What does API stand for?",
-        options: [
-            "Application Programming Interface",
-            "Applied Program Instance",
-            "Advanced Page Integration",
-            "Automated Process Input",
-        ],
+        prompt: "",
+        options: [],
         answerIndex: 0,
     },
     {
-        prompt: "Which method converts JSON text into a JavaScript value?",
-        options: [
-            "JSON.create()",
-            "JSON.parse()",
-            "JSON.stringify()",
-            "JSON.object()",
-        ],
+        prompt: "",
+        options: [],
         answerIndex: 1,
     },
 ];
